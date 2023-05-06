@@ -7,6 +7,9 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
   <title>My Own Portfolio - First One!</title>
 </head>
 
@@ -16,10 +19,11 @@
       <!-- Logo Here <img src="images/SLogo.png" alt="" width="100px" height="50px"> -->
     </div>
     <nav class="Navbar">
-      <ul>
+      <img src="images/bar.svg" alt="Menu" id="navImg">
+      <ul id="navId">
         <li><a href="#" class="link">Home</a></li>
         <li><a href="#" class="link">Portfolio</a></li>
-        <li><a href="#" class="link">About</a></li>
+        <li><a href="#Abo" class="link">About</a></li>
         <li><a href="#" class="link">Work</a></li>
         <li><a href="#" class="link">Services</a></li>
         <li><a href="#" class="link">Contact-Us</a></li>
@@ -34,22 +38,26 @@
       <a href="#" class="ExButton">Contact US</a>
     </div>
   </div>
-  <div class="AboutUs">
+  <div class="AboutUs" id="Abo">
     <h2>About US</h2>
     <p>This is just in Simple text in here and it'll need to Change later.</p>
+    <img src="images/sig.png">
   </div>
   <div class="MySkills">
     <h2>Professional Skills</h2>
     <div class="Row-Container">
-      <p class="UD">UX/Ul Design</p>
+      <p class="UD">UX/Ul Design </p>
+      <p class="counter counter-1"></p>
       <div class="Row-1 Row">
         <div class="F-Row-1 F-Row"></div>
       </div>
       <p class="WD">Web Development</p>
+      <p class="counter counter-2"></p>
       <div class="Row-2 Row">
         <div class="F-Row-2 F-Row"></div>
       </div>
       <p class="ME">Marketing</p>
+      <p class="counter counter-3"></p>
       <div class="Row-3 Row">
         <div class="F-Row-3 F-Row"></div>
       </div>
@@ -88,10 +96,22 @@
   <div class="Sample-Work">
     <div class="S1">
       <div class="W1 W-All">
-        <img src="images/1.png">
+        <div class="FlipImage">
+          <img src="images/1.png">
+        </div>
+        <div class="FlipSection">
+          <p id="Flip-P">If you're interested in this Project , Click the link down below to get more information.</p>
+          <a href="#">Click Me</a>
+        </div>
       </div>
       <div class="W2 W-All">
-        <img src="images/1.png">
+        <div class="FlipImage">
+          <img src="images/1.png">
+        </div>
+        <div class="FlipSection">
+          <p id="Flip-P">If you're interested in this Project , Click the link down below to get more information.</p>
+          <a href="#">Click Me</a>
+        </div>
       </div>
       <div class="W3 W-All">
         <img src="images/1.png">
@@ -122,6 +142,27 @@
         est?</p>
     </div>
   </div>
+  <div class="customerComment">
+    <div class="CC1 CC">
+      <q>I love you the more in that I believe you had liked me for my own sake and for nothing else</q>
+      <p>- John Keats</p>
+    </div>
+    <div class="CC1 CC">
+      <q>But man is not made for defeat. A man can be destroyed but not defeated.</q>
+      <p>- Ernest Hemingway</p>
+    </div>
+    <div class="CC1 CC">
+      <q>I have not failed. I've just found 10,000 ways that won't work.</q>
+      <p>- Thomas A. Edison</p>
+    </div>
+    <a class="prev" onclick="plusS(-1)">&#10094;</a>
+    <a class="next" onclick="plusS(1)">&#10095;</a>
+    <div class="dot-container">
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+      <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+  </div>
   <footer id="Footer">
     <div class="F-Info">
       <h5>MD Design , Inc.</h5>
@@ -137,7 +178,7 @@
         <a href="#">Projects</a>
         <a href="#">About</a>
         <a href="#">Services</a>
-        <a href="#">Carrer</a>
+        <a href="#">Carrier</a>
       </div>
       <div>
         <a href="#">News</a>
@@ -147,10 +188,10 @@
       </div>
     </div>
     <div class="F-Social">
-      <a href="#">Instagram</a>
-      <a href="#">Facebook</a>
-      <a href="#">LinkedIn</a>
-      <a href="#">Twitter</a>
+      <a href="#"><i class="fa-brands fa-instagram"></i></a>
+      <a href="#"><i class="fa-brands fa-facebook-f"></i></i></a>
+      <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+      <a href="#"><i class="fa-brands fa-twitter"></i></a>
     </div>
   </footer>
   <script src="script.js"></script>
