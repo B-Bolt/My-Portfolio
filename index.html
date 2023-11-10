@@ -10,53 +10,67 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
     integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <title>My Own Portfolio - First One!</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>My Portfolio - First Template!</title>
 </head>
 
 <body>
   <header id="Header">
     <div class="logo-section">
-      <!-- Logo Here <img src="images/SLogo.png" alt="" width="100px" height="50px"> -->
+      <img src="images/SecondLogo.jpg" alt="Logo" width="100px" height="50px">
     </div>
     <nav class="Navbar">
       <img src="images/bar.svg" alt="Menu" id="navImg">
       <ul id="navId">
-        <li><a href="#" class="link">Home</a></li>
-        <li><a href="#" class="link">Portfolio</a></li>
-        <li><a href="#Abo" class="link">About</a></li>
-        <li><a href="#" class="link">Work</a></li>
-        <li><a href="#" class="link">Services</a></li>
-        <li><a href="#" class="link">Contact-Us</a></li>
+        <li class="navIdClass"><a href="#" class="link">تماس با ما</a></li>
+        <li class="navIdClass"><a href="#" class="link">درباره ما</a></li>
+        <li class="navIdClass"><a href="#Abo" class="link">آموزش خرید</a></li>
+        <li class="navIdClass"><a href="#" class="link">پشتیبانی</a></li>
+        <li class="navIdClass"><a href="#" class="link">دسته بندی</a>
+          <ul class="ul-DropDown">
+            <li class="ul-DDli"><a href="#">استوک</a></li>
+            <li class="ul-DDli"><a href="#">دست دو</a></li>
+            <li class="ul-DDli"><a href="#">نو</a>
+              <ul class="subDropDown">
+                <li class="ul-sDDli"><a href="#">قطعات ماشین</a></li>
+                <li class="ul-sDDli"><a href="#">جلوبندی</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#" class="link">صفحه اصلی</a></li>
       </ul>
     </nav>
   </header>
   <div class="MainSection">
     <div class="DesignSec"></div>
     <div class="ExSection">
-      <h1>Web Design and Develop.</h1>
-      <p>This is just in Simple text in here and it'll need to Change later.</p>
-      <a href="#" class="ExButton">Contact US</a>
+      <h1>تجربه خرید مطمئن و به صرفه</h1>
+      <p>خرید مک بوک پرو با 10% تخفیف فقط تا پایان امروز!</p>
+      <a href="#" class="ExButton">برای خرید کلیک کنید</a>
     </div>
   </div>
   <div class="AboutUs" id="Abo">
-    <h2>About US</h2>
-    <p>This is just in Simple text in here and it'll need to Change later.</p>
+    <h2>تخفیف ویژه</h2>
+    <p>در این قسمت اجناس ذکر شده از تخفیف هایی بین 10 تا 50 درصد برخوردار می‌باشند.</p>
     <img src="images/sig.png">
   </div>
   <div class="MySkills">
-    <h2>Professional Skills</h2>
+    <h2>آمار سایت</h2>
     <div class="Row-Container">
-      <p class="UD">UX/Ul Design </p>
+      <p class="UD">تعداد سفارش</p>
       <p class="counter counter-1"></p>
       <div class="Row-1 Row">
         <div class="F-Row-1 F-Row"></div>
       </div>
-      <p class="WD">Web Development</p>
+      <p class="WD">درصد رضایت مشتریان</p>
       <p class="counter counter-2"></p>
       <div class="Row-2 Row">
         <div class="F-Row-2 F-Row"></div>
       </div>
-      <p class="ME">Marketing</p>
+      <p class="ME">درصد نارضایتی مشتریان</p>
       <p class="counter counter-3"></p>
       <div class="Row-3 Row">
         <div class="F-Row-3 F-Row"></div>
@@ -68,28 +82,28 @@
       <span class="material-symbols-outlined">work</span>
       <div class="D-Work-C">
         <p>00</p>
-        <p>Project Completed</p>
+        <p>سفارش های تحویل شده</p>
       </div>
     </div>
     <div class="D-Hours D-Element">
       <span class="material-symbols-outlined">schedule</span>
       <div class="D-Work-C">
         <p>00</p>
-        <p>Working Hours</p>
+        <p>تعداد اجناس</p>
       </div>
     </div>
     <div class="D-FeedBack D-Element">
       <span class="material-symbols-outlined">grade</span>
       <div class="D-Work-C">
         <p>00</p>
-        <p>Positive Feedbacks</p>
+        <p>تعداد ماشین های پشتیبانی شده</p>
       </div>
     </div>
     <div class="D-Happy D-Element">
       <span class="material-symbols-outlined">diversity_1</span>
       <div class="D-Work-C">
         <p>01</p>
-        <p>Happy Customers</p>
+        <p>تعداد مشتریان</p>
       </div>
     </div>
   </div>
@@ -100,7 +114,7 @@
           <img src="images/1.png">
         </div>
         <div class="FlipSection">
-          <p id="Flip-P">If you're interested in this Project , Click the link down below to get more information.</p>
+          <p id="Flip-P">If you're interested in this Project , Click the button down below to get more information.</p>
           <a href="#">Click Me</a>
         </div>
       </div>
@@ -109,7 +123,7 @@
           <img src="images/1.png">
         </div>
         <div class="FlipSection">
-          <p id="Flip-P">If you're interested in this Project , Click the link down below to get more information.</p>
+          <p id="Flip-P">If you're interested in this Project , Click the button down below to get more information.</p>
           <a href="#">Click Me</a>
         </div>
       </div>
@@ -134,12 +148,50 @@
         <img src="images/1.png">
       </div>
     </div>
-    <input type="button" value="Load More Work" id="BLoad">
+    <input type="button" value="دیدن نمونه های بیشتر" id="BLoad">
     <div class="Load-More">
       <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus inventore blanditiis debitis
         eum iste
         dolores, ipsa non dolor eveniet facilis illo itaque repellendus incidunt officia, quo magni voluptates dolorem
         est?</p>
+    </div>
+  </div>
+  <div class="ability">
+    <div class="Sec-1">
+      <div class="A1 abi-S1">
+        <h5>UI / UX Design</h3>
+          <p>Be set fourth land god darkness make it wherein own</p>
+      </div>
+      <div class="A2 abi-S1">
+        <h5>Web Development</h5>
+        <p>A she'd them bring void moving third she'd kind fill</p>
+      </div>
+      <div class="A3 abi-S1">
+        <h5>App / Mobile</h5>
+        <p>Dominion man second spirit he . earth they're creeping</p>
+      </div>
+      <div class="A4 abi-S1">
+        <h5>Game Design</h5>
+        <p>Moving his saying moveth it . multiply apper life be</p>
+      </div>
+    </div>
+    <div class="Sec-2">
+      <div class="A5 abi-S2">
+        <h5>Seo / Marketing</h5>
+        <p>She won't after land fill creeping meat you , may</p>
+      </div>
+      <div class="A6 abi-S2">
+        <h5>Photography</h5>
+        <p>creepeth one seas cattle grass give morning saw give</p>
+      </div>
+      <div class="A7 abi-S2">
+        <h5>Graphic Design</h5>
+        <p>Open , great whales air rule for. fourth life whales</p>
+      </div>
+      <div class="A8 abi-S2">
+        <h5>Illustrations</h5>
+        <p>No Whales likeness bath , man kind for them air two won't for</p>
+      </div>
     </div>
   </div>
   <div class="customerComment">
@@ -163,11 +215,31 @@
       <span class="dot" onclick="currentSlide(3)"></span>
     </div>
   </div>
+  <div class="Due-Project">
+    <div class="DP DP1"><img src="images/Bentley.png"></div>
+    <div class="DP DP2"><img src="images/Chanel.jpg"></div>
+    <div class="DP DP3"><img src="images/Armani.jpg"></div>
+    <div class="DP DP4"><img src="images/ABC.png"></div>
+    <div class="DP DP5"><img src="images/EA.jpg"></div>
+  </div>
+  <div class="Mini-Contact">
+    <div class="Title-Contact">
+      <h1>Need a Project ?</h1>
+      <p>Let us know what you're looking for in an agency . We'll take a look and see if this could be start of
+        something beautiful.</p>
+    </div>
+    <div class="Input-Contact">
+      <input type="text" placeholder="Your Name" id="YN">
+      <input type="text" placeholder="Your Email" id="YE">
+      <input type="text" placeholder="Your Title" id="YT">
+      <input type="text" placeholder="Your Commnet" id="YC">
+    </div>
+    <input type="button" value="Send Message" id="YM">
+  </div>
   <footer id="Footer">
     <div class="F-Info">
-      <h5>MD Design , Inc.</h5>
-      <p>&copy 2023 MD Design - All Right Reserved.</p>
-      <p>Designed By B.</p>
+      <h5>MT Design طراحی شده توسط</h5>
+      <p>&copy 2023 MT Design - All Right Reserved.</p>
     </div>
     <div class="F-Contact">
       <p>iammt221@gmail.com</p>
@@ -175,16 +247,16 @@
     </div>
     <div class="F-Link">
       <div>
-        <a href="#">Projects</a>
-        <a href="#">About</a>
-        <a href="#">Services</a>
-        <a href="#">Carrier</a>
+        <a href="#">تماس با ما</a>
+        <a href="#">درباره‌ی ما</a>
+        <a href="#">خدمات</a>
+        <a href="#">پشتیبانی آنلاین</a>
       </div>
       <div>
-        <a href="#">News</a>
-        <a href="#">Event</a>
-        <a href="#">Contact</a>
-        <a href="#">Legals</a>
+        <a href="#">آخرین اخبار</a>
+        <a href="#">تخفیف ویژه</a>
+        <a href="#">آموزش‌ها</a>
+        <a href="#">ضمانت ما</a>
       </div>
     </div>
     <div class="F-Social">

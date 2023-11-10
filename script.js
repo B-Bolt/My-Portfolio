@@ -27,6 +27,16 @@ const menuUl = document.getElementById('navId');
 const navbarEl = document.querySelector('.Navbar');
 const flipElp = document.querySelector('#Flip-P');
 const slideEl = document.getElementsByClassName('CC');
+const ynButton = document.getElementById('YN');
+const sampleWork = document.getElementsByClassName('Sample-Work');
+const wAll = document.querySelectorAll('W-All');
+const flipImage = document.querySelector('.FlipImage');
+const flipSection = document.querySelector('.FlipSection');
+const ulDropDown = document.querySelector('.ul-DropDown');
+const navIdClass = document.querySelectorAll('.navIdClass');
+const subDropDown = document.getElementsByClassName('subDropDown');
+const ulDropDownLi = document.querySelectorAll('.ul-DDli');
+const subDropDownLi = document.querySelectorAll('.ul-sDDli');
 let slideIndex = 1;
 
 // Function's
@@ -41,19 +51,24 @@ const rowMax = function () {
 //     }
 // }
 
+
 // Navbar Menu - For Mobile
 
+
 menuImg.addEventListener('click', function () {
-    menuImg.style.transition = 'all 0.6s';
-    menuUl.style.transition = 'all 2s';
-    if (menuUl.style.display === 'block' && menuImg.style.transform === 'translateX(-200px)') {
+    menuImg.style.transition = '0.6s';
+    menuUl.style.transition = '2s';
+    if (menuUl.style.display === 'block' && menuImg.style.transform === 'translateX(-10px)') {
         menuImg.style.transform = 'translateX(0)';
+        menuUl.style.display = 'block';
+    } else if (menuUl.style.display === 'block') {
         menuUl.style.display = 'none';
     } else {
-        menuImg.style.transform = 'translateX(-200px)';
         menuUl.style.display = 'block';
     }
 });
+
+// End Navbar Menu - For Mobile
 
 // NavBar Link's 
 
@@ -84,15 +99,50 @@ loadMore.classList.add('hidden');
 loadButton.addEventListener('click', function () {
     loadMore.classList.toggle('hidden');
     loadButton.style.transition = "all 2s";
-    loadButton.value === 'Load More Work' ? loadButton.value = 'Close More Work' : loadButton.value = 'Load More Work';
+    loadButton.value === 'دیدن نمونه های بیشتر' ? loadButton.value = 'بستن' : loadButton.value = 'دیدن نمونه های بیشتر';
 });
 
 // For Work's Flip
 
-divProducts.forEach((W) => W.addEventListener('mouseover', function () {
-    W.flipElp.textContent = 'For More info , Click Below';
-}));
+// divProducts.forEach((W) => W.addEventListener('mouseover', function () {
+//     W.flipElp.textContent = 'For More info , Click Below';
+// }));
 
+// Flip Section
+
+wAll.forEach((wall) => wall.addEventListener('mouseover', function () {
+    if (wall.contains('flipImage') || ('flipSection')) {
+        wall.style.transform = 'rotateY(180deg)';
+    }
+}))
+
+// End Flip Section
+
+// For Nav Drop Down
+
+
+// End Nav Drop Down
+
+// Begin sub Drop Down
+let once = true;
+
+const fullWidth = function () {
+    ulDropDownLi.forEach((ulli) => ulli.addEventListener('mouseover', function () {
+        ulDropDownLi.forEach((ulli) => ulli.style.display = 'none');
+        ulDropDownLi.forEach(this.style.display = 'block', this.style.width = '95%');
+    }));
+    ulDropDown.addEventListener('mouseleave', function () {
+        ulDropDownLi.forEach((ulli) => ulli.style.display = '');
+        if (ulDropDownLi.forEach((ulli) => ulli.style.width = '')) {
+            ulDropDownLi.forEach((ulli) => ulli.style.flex = '');
+            ulDropDownLi.forEach(this.style.display = '', this.style.width = '');
+        }
+    })
+}
+
+fullWidth();
+
+// End sub Drop Down
 
 // For Professional Skills - old Code
 
@@ -142,3 +192,12 @@ function showSlide(n) {
     }
     slideEl[slideIndex - 1].style.display = 'block';
 }
+
+// Input Contact Section
+
+ynButton.addEventListener('click', function () {
+    ynButton.placeholder = 'Please Write Down Your Name ...';
+    ynButton.addEventListener('focusout', function () {
+        ynButton.placeholder = 'Your Name';
+    })
+})
