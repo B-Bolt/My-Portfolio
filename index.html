@@ -13,10 +13,12 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <title>My Portfolio - First Template!</title>
+  <title>تولیدی تاج</title>
 </head>
 
 <body>
+  <!-- ---------- BEGIN HEADER SECTION ---------- -->
+
   <header id="Header">
     <div class="logo-section">
       <img src="images/SecondLogo.jpg" alt="Logo" width="100px" height="50px">
@@ -26,16 +28,41 @@
       <ul id="navId">
         <li class="navIdClass"><a href="#" class="link">تماس با ما</a></li>
         <li class="navIdClass"><a href="#" class="link">درباره ما</a></li>
-        <li class="navIdClass"><a href="#Abo" class="link">آموزش خرید</a></li>
+        <li class="navIdClass"><a href="#Abo" class="link">تخفیف ویژه</a></li>
         <li class="navIdClass"><a href="#" class="link">پشتیبانی</a></li>
         <li class="navIdClass"><a href="#" class="link">دسته بندی</a>
           <ul class="ul-DropDown">
-            <li class="ul-DDli"><a href="#">استوک</a></li>
-            <li class="ul-DDli"><a href="#">دست دو</a></li>
-            <li class="ul-DDli"><a href="#">نو</a>
+            <li class="ul-DDli"><a href="#">تک</a>
               <ul class="subDropDown">
-                <li class="ul-sDDli"><a href="#">قطعات ماشین</a></li>
-                <li class="ul-sDDli"><a href="#">جلوبندی</a></li>
+                <li class="ul-sDDli"><a href="#">کاپشن</a></li>
+                <li class="ul-sDDli"><a href="#">شلوار</a></li>
+                <li class="ul-sDDli"><a href="#">پیراهن</a></li>
+                <li class="ul-sDDli"><a href="#">تی‌شرت</a></li>
+                <li class="ul-sDDli"><a href="#">سارافون</a></li>
+                <li class="ul-sDDli"><a href="#">اسلش</a></li>
+                <!--<li class="ul-sDDli"><a href="#"></a></li>-->
+              </ul>
+            </li>
+            <li class="ul-DDli"><a href="#">دست دو</a>
+              <ul class="subDropDown">
+                <li class="ul-sDDli"><a href="#">کاپشن</a></li>
+                <li class="ul-sDDli"><a href="#">شلوار</a></li>
+                <li class="ul-sDDli"><a href="#">پیراهن</a></li>
+                <li class="ul-sDDli"><a href="#">تی‌شرت</a></li>
+                <li class="ul-sDDli"><a href="#">سارافون</a></li>
+                <li class="ul-sDDli"><a href="#">اسلش</a></li>
+                <!--<li class="ul-sDDli"><a href="#"></a></li>-->
+              </ul>
+            </li>
+            <li class="ul-DDli"><a href="#">عمده</a>
+              <ul class="subDropDown">
+                <li class="ul-sDDli"><a href="#">کاپشن</a></li>
+                <li class="ul-sDDli"><a href="#">شلوار</a></li>
+                <li class="ul-sDDli"><a href="#">پیراهن</a></li>
+                <li class="ul-sDDli"><a href="#">تی‌شرت</a></li>
+                <li class="ul-sDDli"><a href="#">سارافون</a></li>
+                <li class="ul-sDDli"><a href="#">اسلش</a></li>
+                <!--<li class="ul-sDDli"><a href="#"></a></li>-->
               </ul>
             </li>
           </ul>
@@ -44,18 +71,107 @@
       </ul>
     </nav>
   </header>
+  <!-- ---------- END HEADER SECTION ---------- -->
+
+  <!-- ---------- BEGIN MAIN SECTION ---------- -->
+
   <div class="MainSection">
     <div class="DesignSec"></div>
     <div class="ExSection">
-      <h1>تجربه خرید مطمئن و به صرفه</h1>
-      <p>خرید مک بوک پرو با 10% تخفیف فقط تا پایان امروز!</p>
+      <h1>بهترین قیمت‌ها برای فروشندگان!</h1>
+      <p id="exParagraph"></p>
       <a href="#" class="ExButton">برای خرید کلیک کنید</a>
     </div>
   </div>
+
+  <!-- ---------- END MAIN SECTION ---------- -->
+
   <div class="AboutUs" id="Abo">
     <h2>تخفیف ویژه</h2>
     <p>در این قسمت اجناس ذکر شده از تخفیف هایی بین 10 تا 50 درصد برخوردار می‌باشند.</p>
-    <img src="images/sig.png">
+    <div class="discount-Slideshow">
+      <div class="slideshowTitle">
+        <h3>تخفیف شگفت‌انگیز</h3>
+      </div>
+      <div class="slideshowContent">
+
+        <!-- Next/previous controls -->
+
+        <a class="previous" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="nextpic" onclick="plusSlides(1)">&#10095;</a>
+
+        <div class="slideshowColumn">
+          <img src="images/img_mountains.jpg" onclick="openModal();currentSlide(1)" class="hover-shadow">
+        </div>
+
+        <div class="slideshowColumn">
+          <img src="images/img_5terre.jpg" onclick="openModal();currentSlide(2)" class="hover-shadow">
+        </div>
+
+        <div class="slideshowColumn">
+          <img src="images/img_snow.jpg" onclick="openModal();currentSlide(3)" class="hover-shadow">
+        </div>
+
+        <div class="slideshowColumn">
+          <img src="images/img_woods.jpg" onclick="openModal();currentSlide(4)" class="hover-shadow">
+        </div>
+
+      </div>
+
+      <!-- Main Modal -->
+
+      <div id="slideModal" class="slideshowModal">
+        <span class="close modal" onclick="closeModal()">&times;</span>
+        <div class="modalContent">
+          <div class="widePics">
+            <div class="slideNumbers">1 / 4</div>
+            <img src="images/img_mountains_wide.jpg" style="width: 100%;">
+          </div>
+
+          <div class="widePics">
+            <div class="slideNumbers">2 / 4</div>
+            <img src="images/img_5terre_wide.jpg" style="width: 100%;">
+          </div>
+
+          <div class="widePics">
+            <div class="slideNumbers">3 / 4</div>
+            <img src="images/img_snow_wide.jpg" style="width: 100%;">
+          </div>
+
+          <div class="widePics">
+            <div class="slideNumbers">4 / 4</div>
+            <img src="images/img_woods_wide.jpg" style="width: 100%;">
+          </div>
+
+          <!-- Next/previous controls -->
+
+          <a class="previous" onclick="plusSlides(-1)">&#10094;</a>
+          <a class="nextpic" onclick="plusSlides(1)">&#10095;</a>
+
+          <!-- Caption text -->
+          <div class="caption-container">
+            <p id="caption"></p>
+          </div>
+
+          <div class="columnThumbnail">
+            <img src="images/img_mountains.jpg" class="demo" onclick="currentSlide(1)" alt="کوهستان">
+          </div>
+
+          <div class="columnThumbnail">
+            <img src="images/img_5terre.jpg" class="demo" onclick="currentSlide(2)" alt="ستاره">
+          </div>
+
+          <div class="columnThumbnail">
+            <img src="images/img_snow.jpg" class="demo" onclick="currentSlide(3)" alt="برف">
+          </div>
+
+          <div class="columnThumbnail">
+            <img src="images/img_woods.jpg" class="demo" onclick="currentSlide(4)" alt="چوب">
+          </div>
+
+        </div>
+      </div>
+    </div>
   </div>
   <div class="MySkills">
     <h2>آمار سایت</h2>
@@ -81,28 +197,28 @@
     <div class="D-Project D-Element">
       <span class="material-symbols-outlined">work</span>
       <div class="D-Work-C">
-        <p>00</p>
+        <p class="D-Counter-D">120</p>
         <p>سفارش های تحویل شده</p>
       </div>
     </div>
     <div class="D-Hours D-Element">
       <span class="material-symbols-outlined">schedule</span>
       <div class="D-Work-C">
-        <p>00</p>
+        <p class="D-Counter-S">50</p>
         <p>تعداد اجناس</p>
       </div>
     </div>
     <div class="D-FeedBack D-Element">
       <span class="material-symbols-outlined">grade</span>
       <div class="D-Work-C">
-        <p>00</p>
-        <p>تعداد ماشین های پشتیبانی شده</p>
+        <p class="D-Counter-C">30</p>
+        <p>تعداد شهر های پشتیبانی شده</p>
       </div>
     </div>
     <div class="D-Happy D-Element">
       <span class="material-symbols-outlined">diversity_1</span>
       <div class="D-Work-C">
-        <p>01</p>
+        <p class="D-Counter-CU">1000</p>
         <p>تعداد مشتریان</p>
       </div>
     </div>
@@ -114,8 +230,8 @@
           <img src="images/1.png">
         </div>
         <div class="FlipSection">
-          <p id="Flip-P">If you're interested in this Project , Click the button down below to get more information.</p>
-          <a href="#">Click Me</a>
+          <p id="Flip-P">برای دیدن اطلاعات کامل این محصول روی دکمه‌ی زیر کلیک کنید</p>
+          <a href="#">کلیک کنید</a>
         </div>
       </div>
       <div class="W2 W-All">
@@ -123,8 +239,8 @@
           <img src="images/1.png">
         </div>
         <div class="FlipSection">
-          <p id="Flip-P">If you're interested in this Project , Click the button down below to get more information.</p>
-          <a href="#">Click Me</a>
+          <p id="Flip-P">برای دیدن اطلاعات کامل این محصول روی دکمه‌ی زیر کلیک کنید</p>
+          <a href="#">کلیک کنید</a>
         </div>
       </div>
       <div class="W3 W-All">
@@ -148,56 +264,56 @@
         <img src="images/1.png">
       </div>
     </div>
-    <input type="button" value="دیدن نمونه های بیشتر" id="BLoad">
+    <!-- <input type="button" value="دیدن نمونه های بیشتر" id="BLoad">
     <div class="Load-More">
       <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus inventore blanditiis debitis
         eum iste
         dolores, ipsa non dolor eveniet facilis illo itaque repellendus incidunt officia, quo magni voluptates dolorem
         est?</p>
-    </div>
+    </div> -->
   </div>
   <div class="ability">
     <div class="Sec-1">
       <div class="A1 abi-S1">
-        <h5>UI / UX Design</h3>
-          <p>Be set fourth land god darkness make it wherein own</p>
+        <h5>ارسال رایگان</h3>
+          <p>با خرید بالای 1 میلیون تومان سفارش خود را رایگان تحویل بگیرید</p>
       </div>
       <div class="A2 abi-S1">
-        <h5>Web Development</h5>
-        <p>A she'd them bring void moving third she'd kind fill</p>
+        <h5>ارسال به بیش از 20 استان</h5>
+        <p>ما به بیش از 20 استان کشور تا به امروز عرضه محصول داشته‌ایم</p>
       </div>
       <div class="A3 abi-S1">
-        <h5>App / Mobile</h5>
-        <p>Dominion man second spirit he . earth they're creeping</p>
+        <h5>ارسال سریع</h5>
+        <p>اجناس خریداری شده شما بین 2 تا 5 روز کاری آماده ارسال می‌شوند</p>
       </div>
       <div class="A4 abi-S1">
-        <h5>Game Design</h5>
-        <p>Moving his saying moveth it . multiply apper life be</p>
+        <h5>پشتیبانی 24/7</h5>
+        <p>در 24 ساعت شبانه‌روز و 7 روز هفته پشتیبان شما هستیم</p>
       </div>
     </div>
     <div class="Sec-2">
       <div class="A5 abi-S2">
-        <h5>Seo / Marketing</h5>
-        <p>She won't after land fill creeping meat you , may</p>
+        <h5>تکی / عمده</h5>
+        <p>هم می‌تونید به صورت تکی سفارش بدید هم عمده</p>
       </div>
       <div class="A6 abi-S2">
-        <h5>Photography</h5>
-        <p>creepeth one seas cattle grass give morning saw give</p>
+        <h5>تضمین کیفیت</h5>
+        <p>تمامی اجناس ارسالی تا 24 ساعت در صورت نارضایتی شما پس گرفته می‌شوند</p>
       </div>
       <div class="A7 abi-S2">
-        <h5>Graphic Design</h5>
-        <p>Open , great whales air rule for. fourth life whales</p>
+        <h5>امکان بازدید</h5>
+        <p>در صورت درخواست با مشاهده صفحه ارتباط با ما می‌توانید بصورت حضوری از انبار ما دیدن کنید</p>
       </div>
       <div class="A8 abi-S2">
-        <h5>Illustrations</h5>
-        <p>No Whales likeness bath , man kind for them air two won't for</p>
+        <h5>بهترین‌ها</h5>
+        <p>هم بهترین پارچه و هم بهترین دوخت. هرکی دیده برده!</p>
       </div>
     </div>
   </div>
   <div class="customerComment">
     <div class="CC1 CC">
-      <q>I love you the more in that I believe you had liked me for my own sake and for nothing else</q>
-      <p>- John Keats</p>
+      <q>نظر مشتری</q>
+      <p>اسم مشتری</p>
     </div>
     <div class="CC1 CC">
       <q>But man is not made for defeat. A man can be destroyed but not defeated.</q>
@@ -207,12 +323,17 @@
       <q>I have not failed. I've just found 10,000 ways that won't work.</q>
       <p>- Thomas A. Edison</p>
     </div>
+    <div class="CC1 CC">
+      <q>تیمی حرفه‌ای و پاسخ‌گو . تجربه خرید و همکاری موفقی با یک‌دیگر داریم</q>
+      <p>- احمدی‌نژاد</p>
+    </div>
     <a class="prev" onclick="plusS(-1)">&#10094;</a>
     <a class="next" onclick="plusS(1)">&#10095;</a>
     <div class="dot-container">
       <span class="dot" onclick="currentSlide(1)"></span>
       <span class="dot" onclick="currentSlide(2)"></span>
       <span class="dot" onclick="currentSlide(3)"></span>
+      <span class="dot" onclick="currentSlide(4)"></span>
     </div>
   </div>
   <div class="Due-Project">
@@ -224,17 +345,16 @@
   </div>
   <div class="Mini-Contact">
     <div class="Title-Contact">
-      <h1>Need a Project ?</h1>
-      <p>Let us know what you're looking for in an agency . We'll take a look and see if this could be start of
-        something beautiful.</p>
+      <h1>سوالی از ما دارید ؟</h1>
+      <p>با استفاده از فرم زیر می‌توانید نظرات و پیشنهادات و حتی انتقادات خود را با ما در میان بگذارید.</p>
     </div>
     <div class="Input-Contact">
-      <input type="text" placeholder="Your Name" id="YN">
-      <input type="text" placeholder="Your Email" id="YE">
-      <input type="text" placeholder="Your Title" id="YT">
-      <input type="text" placeholder="Your Commnet" id="YC">
+      <input type="text" placeholder="اسم شما" id="YN">
+      <input type="text" placeholder="ایمیل / شماره تلفن شما" id="YE">
+      <input type="text" placeholder="عنوان مطلب" id="YT">
+      <input type="text" placeholder="متن شما" id="YC">
     </div>
-    <input type="button" value="Send Message" id="YM">
+    <input type="button" value="ارسال پیام" id="YM">
   </div>
   <footer id="Footer">
     <div class="F-Info">
@@ -266,6 +386,15 @@
       <a href="#"><i class="fa-brands fa-twitter"></i></a>
     </div>
   </footer>
+  <div id="MobileMenu">
+    <ul>
+      <li><a href="#"><i class="fa-solid fa-tags"></i>تخفیف ویژه</a></li>
+      <li><a href="#"><i class="fa-solid fa-user"></i>ورود</a></li>
+      <li><a href="#"><i class="fa-solid fa-cart-shopping"></i>سبد خرید</a></li>
+      <li><a href="#"><i class="fa-solid fa-bars"></i>دسته بندی</a></li>
+      <li></i><a href="#"><i class="fa-solid fa-house"></i>خانه</a></li>
+    </ul>
+  </div>
   <script src="script.js"></script>
 </body>
 

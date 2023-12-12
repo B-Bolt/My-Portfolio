@@ -67,6 +67,7 @@ li {
 
 a {
 	text-decoration: none;
+	list-style: none;
 }
 
 ::selection {
@@ -115,11 +116,6 @@ a {
 	transition: all 0.5s;
 }
 
-.Navbar ul {
-	margin: 0;
-	padding: 0;
-	transition: all 0.5s;
-}
 
 .Navbar img {
 	display: none;
@@ -128,32 +124,18 @@ a {
 	transition: all 0.5s;
 }
 
-.Navbar li {
-	display: inline-block;
-	margin: 5px;
-	box-sizing: border-box;
-	height: 100%;
-	justify-content: center;
-	text-align: center;
-}
-
 .Navbar .link {
 	position: relative;
 	font-family: 'B Yekan', tahoma;
 	display: block;
 	color: #000;
-	box-sizing: border-box;
 	font-weight: bold;
 	font-size: 12px;
 	letter-spacing: 1px;
-	padding: 10px;
 	border-radius: 5px;
-	margin-left: 10px;
-	text-transform: uppercase;
 	transition: 0.1s;
 	background: rgba(255, 255, 255, 0.05);
 	backdrop-filter: blur(15px);
-	justify-content: center;
 }
 
 .Navbar .link-active {
@@ -182,27 +164,29 @@ a {
 /* Nav Drop-Down */
 
 #navId {
-	margin-top: 15px;
+	position: relative;
+	justify-content: flex-end;
+	padding: 0;
+	transition: all 0.5s;
+	display: flex;
 }
 
-#navId li ul {
-	display: none;
-	background-color: #12CBC4;
-	border-right: 5px solid #FFF;
-	border-radius: 4px;
-	margin-top: 22px;
-	position: absolute;
-	padding: 10px 0 20px 0;
-	transition: 2s;
+#navId li {
+	display: inline-block;
+	padding: 30px 20px 35px 20px;
 	box-sizing: border-box;
-	width: 90%;
-	min-height: 200px;
-	right: 0;
-	text-align: end;
+	overflow: hidden;
+	align-items: center;
+}
+
+#navId li a {
+	display: flex;
+	justify-content: space-around;
+	text-align: center;
 }
 
 #navId li:hover ul {
-	display: flex;
+	display: inline-block;
 	transition: 2s;
 }
 
@@ -210,15 +194,7 @@ a {
 	transition: all 0.2s;
 }
 
-#navId li ul li {
-	position: relative;
-	font-size: 10px;
-	padding: 5px;
-	display: flex;
-	flex-direction: row;
-	width: 50%;
-	border-radius: 5px;
-}
+/* ----- CLEAN CODE - BORDER ANIMATION - BEGIN -----*/
 
 @keyframes border {
 	0% {
@@ -285,12 +261,15 @@ a {
 	}
 }
 
+/* ----- CLEAN CODE - BORDER ANIMATION - END -----*/
+
+
 #navId .navIdClass {
 	text-align: center;
 	box-sizing: border-box;
 }
 
-#navId li ul li::before {
+#navId .ul-DDli::before {
 	content: ' ';
 	position: absolute;
 	bottom: 0;
@@ -304,7 +283,7 @@ a {
 	z-index: 2;
 }
 
-#navId li ul li::after {
+#navId .ul-DDli::after {
 	content: ' ';
 	position: absolute;
 	top: 0;
@@ -318,27 +297,38 @@ a {
 	z-index: 1;
 }
 
-#navId li ul li a {
+#navId .ul-DDli a {
 	color: #FFF;
 }
 
-#navId li ul li:hover {
+#navId .ul-DDli:hover {
 	transition: all 0.2s;
 	background-color: #FFF;
 }
 
-#navId li ul li:hover a {
+#navId .ul-DDli:hover a {
 	color: #12CBC4;
 }
 
 /* Begin of Sub Drop Down */
 
 #navId .ul-DropDown {
-	box-sizing: border-box;
 	flex-direction: column-reverse;
 	justify-content: flex-end;
 	align-items: flex-end;
-	padding-top: 20px;
+	display: none;
+	margin-top: 20px;
+	background-color: #12CBC4;
+	border-right: 5px solid #FFF;
+	border-radius: 4px;
+	position: absolute;
+	padding: 20px 0 20px 0;
+	transition: 2s;
+	box-sizing: border-box;
+	width: 90%;
+	min-height: 200px;
+	right: 0;
+	text-align: center;
 }
 
 #navId .ul-DropDown li {
@@ -346,15 +336,31 @@ a {
 	margin: 1%;
 }
 
+#navId li ul li {
+	font-size: 10px;
+	padding: 5px;
+	display: flex;
+	flex-direction: row;
+	width: 50%;
+	border-radius: 5px;
+}
+
+#navId .ul-DDli {
+	display: block;
+}
+
 #navId .subDropDown {
+	display: flex;
 	box-sizing: border-box;
 	min-height: auto;
 	padding: 0;
 	width: 100%;
-	margin: 0;
+	flex-direction: row;
+	margin-right: 20%;
+	border: 1px solid #000;
 }
 
-#navId .subDropDown li {
+#navId .subDropDown .ul-sDDli {
 	display: none;
 	background-color: #FFF;
 	animation: none;
@@ -365,16 +371,16 @@ a {
 	box-sizing: content-box;
 }
 
-#navId .subDropDown li::before {
+#navId .subDropDown .ul-sDDli::before {
 	display: none;
 }
 
-#navId .subDropDown li::after {
+#navId .subDropDown .ul-sDDli::after {
 	display: none;
 }
 
 
-#navId li ul li:hover ul li {
+#navId .ul-DDli:hover ul li {
 	display: flex;
 	flex-direction: column;
 	width: 100%;
@@ -386,13 +392,19 @@ a {
 
 /* End of Sub Drop Down */
 
+/* ----- CLEAN CODE - FIX SUB-SUB DROP DOWN - BEGIN -----*/
+
+/* ----- CLEAN CODE - FIX SUB-SUB DROP DOWN - END -----*/
+
+/* ----- -----*/
+
 /* End of Header Section */
 
 
 
 /* Responsive for Header */
 
-@media Screen and (max-width : 510px) {
+@media Screen and (max-width : 768px) {
 	#Header {
 		display: flex;
 		flex-direction: column;
@@ -407,34 +419,12 @@ a {
 		display: none;
 	}
 
-	.Navbar {
-		display: flex;
-		flex-direction: column;
-		margin: 0;
-		flex: 2;
-		position: relative;
-		align-items: flex-end;
-		transition: all 0.5s;
-	}
-
-	.Navbar img {
-		display: flex;
-		width: 5%;
-		transition: all 0.5s;
-		margin-top: 10px;
-	}
-
 	.Navbar ul {
 		display: none;
-		flex-wrap: wrap;
-		width: 95%;
-		margin-right: 15px;
-		transition: all 0.5s;
-		padding: 50px 0;
 	}
 
 	#navId {
-		width: 80%;
+		display: none;
 	}
 
 	#navId li {
@@ -458,6 +448,10 @@ a {
 		margin: 0;
 		display: flex;
 		border: 1px outset #00a8ff;
+	}
+
+	.subDropDown {
+		display: none;
 	}
 }
 
@@ -499,7 +493,7 @@ a {
 .DesignSec {
 	display: flex;
 	/* Should put MacBook Images in the code down below */
-	background-image: url("images/MB.png");
+	background-image: url("images/Jacket.png");
 	background-repeat: no-repeat;
 	background-position: left;
 	background-size: contain;
@@ -537,6 +531,11 @@ a {
 	margin-right: auto;
 	text-align: center;
 	border-radius: 2px;
+	transition: all 0.5s;
+}
+
+.ExSection .ExButton:hover {
+	box-shadow: 0 0 6px rgba(35, 173, 278, 1);
 }
 
 /* End of Main Section */
@@ -610,7 +609,6 @@ a {
 	align-items: center;
 	flex-direction: column;
 	padding: 40px 0;
-
 }
 
 /* background-image: url("images/sig.jpg");
@@ -633,6 +631,222 @@ a {
 	text-align: center;
 	width: 50%;
 }
+
+.discount-Slideshow {
+	display: flex;
+	margin-top: 100px;
+	margin-bottom: -40px;
+	width: 100%;
+	height: 200px;
+	background-color: #006266;
+	border-radius: 3px;
+	flex-direction: row-reverse;
+}
+
+.discount-Slideshow .slideshowTitle {
+	display: flex;
+	flex: 1;
+	order: 1;
+	height: 90%;
+	margin: auto;
+	background-color: #05c46b;
+	text-align: center;
+	justify-content: flex-end;
+	align-items: center;
+	border-top-left-radius: 50px;
+	border-bottom-left-radius: 50px;
+}
+
+.discount-Slideshow .slideshowTitle h3 {
+	margin-right: 20px;
+	color: #FFF;
+	padding: 40px;
+	border-radius: 2px;
+	cursor: pointer;
+}
+
+.discount-Slideshow .slideshowContent {
+	position: relative;
+	display: flex;
+	flex: 3;
+	order: 2;
+	height: 100%;
+	border-top-right-radius: 50px;
+	border-bottom-right-radius: 50px;
+}
+
+
+.discount-Slideshow .slideshowColumn img {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	object-fit: cover;
+	border-radius: 5px;
+	transition: all 0.5s;
+}
+
+@media screen and (max-width : 510px) {
+
+	.discount-Slideshow {
+		flex-direction: column;
+	}
+
+	.discount-Slideshow .slideshowTitle {
+		height: 30%;
+		text-align: center;
+		align-items: center;
+		justify-content: center;
+		border-top-left-radius: 0;
+		border-bottom-left-radius: 0;
+		border-radius: 2px;
+	}
+
+	.discount-Slideshow .slideshowTitle h3 {
+		margin: 0;
+	}
+
+	.discount-Slideshow .slideshowContent {
+		height: 80%;
+		margin-top: 20px;
+	}
+
+	.discount-Slideshow .slideshowColumn {
+		height: auto;
+	}
+
+	.discount-Slideshow .slideshowColumn img {
+		border-radius: 1px;
+		object-fit: fill;
+		width: 95%;
+		height: 100%;
+	}
+
+	.slideshowContent,
+	.slideshowTitle {
+		border-radius: 0;
+	}
+}
+
+/* Start the Modal Part */
+
+.slideshowModal {
+	display: none;
+	position: fixed;
+	z-index: 99999;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	padding-top: 100px;
+	overflow: auto;
+	background-color: black;
+}
+
+.modalContent {
+	position: relative;
+	background-color: #fefefe;
+	margin: auto;
+	padding: 0;
+	width: 90%;
+	max-width: 1200px;
+}
+
+/* Hide the slides by default */
+
+.widePics {
+	display: none;
+}
+
+/* The Close Button */
+
+.close {
+	color: white;
+	position: absolute;
+	top: 10px;
+	right: 25px;
+	font-size: 35px;
+	font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+	color: #999;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+/* Next & previous buttons */
+.previous,
+.nextpic {
+	cursor: pointer;
+	position: absolute;
+	top: 50%;
+	width: auto;
+	padding: 16px;
+	margin-top: -50px;
+	color: white;
+	font-weight: bold;
+	font-size: 20px;
+	transition: 0.6s ease;
+	border-radius: 0 3px 3px 0;
+	user-select: none;
+	-webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.nextpic {
+	right: 0;
+	border-radius: 3px 0 0 3px;
+}
+
+/* Number text (1/3 etc) */
+
+.slideNumbers {
+	color: #f2f2f2;
+	font-size: 12px;
+	padding: 8px 12px;
+	position: absolute;
+	top: 0;
+}
+
+/* Caption text */
+
+.caption-container {
+	text-align: center;
+	background-color: black;
+	padding: 2px 16px;
+	color: white;
+}
+
+.columnThumbnail {
+	float: left;
+	width: 25%;
+}
+
+.columnThumbnail .demo {
+	opacity: 0.6;
+	width: 100%;
+}
+
+.active,
+.demo:hover {
+	opacity: 1;
+}
+
+.columnThumbnail .hover-shadow {
+	transition: 0.3s;
+}
+
+.hover-shadow:hover {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	transition: all 0.5s;
+}
+
+/* End the Modal Part */
+
+/* End AboutUS */
+
+/* Begin My Skill's */
 
 .MySkills {
 	display: flex;
@@ -763,6 +977,8 @@ a {
 	}
 }
 
+/* End My Skill's */
+
 /* Done Work Section */
 .DoneWork {
 	display: flex;
@@ -858,12 +1074,13 @@ a {
 	margin: 3px 0;
 }
 
+
 .D-Work-C p:nth-child(1) {
 	letter-spacing: 2px;
 }
 
 .D-Work-C p:nth-child(2) {
-	font-size: 12px;
+	font-size: 14px;
 }
 
 .D-Happy {
@@ -1054,7 +1271,7 @@ a {
 	transition: 0.2s;
 }
 
-#BLoad {
+/* #BLoad {
 	order: 3;
 	background-color: #dcdde1;
 	color: #718093;
@@ -1082,14 +1299,14 @@ a {
 .Load-More p {
 	order: 2;
 	width: 100%;
-}
+} */
 
 /* Responsive */
 
 @media screen and (max-width : 510px) {
 
 	.Sample-Work {
-		padding: 50px 0 150px 0;
+		padding: 50px 0 50px 0;
 		position: relative;
 	}
 
@@ -1198,6 +1415,11 @@ a {
 	border-radius: 5px;
 }
 
+.dot-container span {
+	color: #000;
+	z-index: 9999;
+}
+
 /* Due Project Section */
 
 .Due-Project {
@@ -1274,6 +1496,7 @@ a {
 	background-color: #FDFDFD;
 	transition: all 0.5s;
 	border: none;
+	text-align: right;
 }
 
 #YN {
@@ -1436,6 +1659,17 @@ q {
 	.CC {
 		width: 80%;
 	}
+
+	#YM {
+		font-size: 20px;
+		font-weight: bold;
+	}
+
+	.Input-Contact input::placeholder {
+		font-size: 15px;
+		font-weight: bold;
+		text-align: right;
+	}
 }
 
 /* Additional Style */
@@ -1563,6 +1797,7 @@ q {
 	#Footer {
 		display: flex;
 		flex-direction: column;
+		padding-bottom: 70px;
 	}
 
 	#Footer a {
@@ -1664,4 +1899,52 @@ q {
 .flex {
 	display: flex;
 	z-index: 99;
+}
+
+/* Mobile Tab */
+
+@media screen and (min-width : 768px) {
+	#MobileMenu {
+		display: none !important;
+	}
+}
+
+#MobileMenu {
+	position: fixed;
+	display: flex;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	width: 100%;
+	height: 65px;
+	background-color: #f5f6fa;
+	align-items: center;
+	z-index: 999999;
+}
+
+#MobileMenu ul {
+	display: flex;
+	width: 100%;
+	height: 100%;
+}
+
+#MobileMenu li {
+	flex: 1;
+	flex-direction: row-reverse;
+	text-align: center;
+}
+
+#MobileMenu a {
+	display: flex;
+	height: 100%;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	justify-content: center;
+	color: #2f3640;
+	font-size: 0.8rem;
+}
+
+#MobileMenu a i {
+	margin-bottom: 5px;
 }
